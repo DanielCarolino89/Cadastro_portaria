@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO</title>
+    <script src="display.js" defer></script>
+    <style>
+        html,
+        body {
+            height: auto;
+            width: auto;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+
+        }
+
+        table{
+            width: 100%;
+        }
+
+        .container{
+            background-color: aqua;
+            margin: 30px;
+            background-color: #00ffff;
+            border: 5px solid purple;
+            padding: 30px;
+            box-shadow: 1px 0px 20px black;
+        }
+
+        button {
+            color: purple;
+            background-color: whitesmoke;
+            border-color: purple;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <table>
+            <tr>
+                <td>
+                    <h3>Cadastro de Visitantes ou Prestadores
+                    <a href="index.html"><button><b>VOLTAR</b></button></a></h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Tipo:</strong>
+                    <div id="displayTipo"></div>
+                    <strong>Entrada:</strong>
+                    <div id="displayCasa"></div>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    <h4><b>DADOS DO USUÁRIO:</b></h4>
+                    <strong>Documento:</strong>
+                    <div id="displayDocumento"></div>
+                    <strong>Expedicao:</strong>
+                    <div id="displayExpedicao"></div>
+                    <strong>Nome:</strong>
+                    <div id="displayNome"></div>
+                    <strong>Empresa:</strong>
+                    <div id="displayEmpresa"></div>
+                    <strong>Funçao:</strong>
+                    <div id="displayFuncao"></div>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <h4><b>DADOS DO VEICULO:</b></h4>
+                    <strong>Placa:</strong>
+                    <div id="displayPlaca"></div>
+                    <strong>Marca:</strong>
+                    <div id="displayMarca"></div>
+                    <strong>Modelo:</strong>
+                    <div id="displayModelo"></div>
+                    <strong>Cor:</strong>
+                    <div id="displayCor"></div>
+                </td>
+
+
+
+            </tr>
+        </table>
+        <h5 style="padding-top: 10px;">© 2024 Daniel Carolino. Todos os direitos reservados.</h5>
+    </div>
+
+
+</body>
+
+</html>

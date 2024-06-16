@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: auto;
+            height: auto;
+            background-color: #00ffff;
+            border: 5px solid purple;
+            padding: 5px;
+            box-shadow: 1px 0px 20px black;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            align-items: start;
+            padding: 5px;
+        }
+
+        .tabela {
+            background-color: #737373;
+            border: 2px solid lightblue;
+            width: 100%;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+
+        tr {
+            width: 100%;
+            align-items: center;
+        }
+
+        .titulo {
+            background-color: aqua;
+
+        }
+
+        input {
+            width: 100%;
+
+        }
+
+        button {
+            color: purple;
+            background-color: whitesmoke;
+            border-color: purple;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form id="carForm">
+            <h3 style="color:purple;">Cadastro de Visitantes ou Prestadores</h3><br>
+            <label for="tipo">Tipo de entrada:</label>
+            <select name="tipo" id="tipo" required>
+                <option value="visitante">VISITANTE</option>
+                <option value="prestadores">PRESTADOR DE SERVIÇO</option>
+            </select>
+            <hr>
+            <table>
+                <tr>
+                    <td rowspan="3">
+                        <label for="placa">Placa</label>
+                        <input type="text" name="placa" id="placa" minlength="7" required>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><label for="marca">Marca</label></td>
+                                <td><input type="text" name="marca" id="marca"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="modelo">Modelo</label></td>
+                                <td><input type="text" name="modelo" id="modelo"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="cor">Cor</label></td>
+                                <td><input type="text" name="cor" id="cor"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <td><label for="documento">Documento</label></td>
+                    <td><input name="documento" id="documento" type="text" minlength="7" required></td>
+                    <td><label for="expedicao">Expedição</label></td>
+                    <td><input name="expedicao" id="expedicao" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="nome">Nome</label></td>
+                    <td colspan="3"><input name="nome" id="nome" type="text" required></td>
+                </tr>
+                <tr>
+                    <td><label for="empresa">Empresa</label></td>
+                    <td><input name="empresa" id="empresa" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="funcao">Função</label></td>
+                    <td><input name="funcao" id="funcao" type="text"></td>
+                </tr>
+            </table>
+            <hr>
+            <label for="casa">Casa:</label>
+            <select name="casa" id="casa" required>
+                <option value="CASA 001 - JOÃO DA SILVA">CASA 001 - JOÃO DA SILVA</option>
+                <option value="CASA 002 - ANTÔNIO FERRAZ">CASA 002 - ANTÔNIO FERRAZ</option>
+                <option value="CASA 003 - REINALDO TORRES">CASA 003 - REINALDO TORRES</option>
+                <option value="CASA 004 - BARBARA TERREAGA">CASA 004 - BARBARA TERREAGA</option>
+                <option value="CASA 005 - JILBERTO CARLOS">CASA 005 - JILBERTO CARLOS</option>
+                <option value="CASA 006 - MATHEUS MASSAFERA">CASA 006 - MATHEUS MASSAFERA</option>
+                <option value="CASA 007 - JOSUÉ LOPES">CASA 007 - JOSUÉ LOPES</option>
+                <option value="CASA 008 - MARIA DE OLIVEIRA">CASA 008 - MARIA DE OLIVEIRA</option>
+                <option value="CASA 009 - DANIEL CAROLINO">CASA 009 - DANIEL CAROLINO</option>
+                <option value="CASA 010 - MARCOS MORAIS">CASA 010 - MARCOS MORAIS</option>
+            </select>
+            <hr>
+            <button type="submit"><b>Cadastrar</b></button>
+            <h5 style="padding-top: 10px;">© 2024 Daniel Carolino. Todos os direitos reservados.</h5>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('carForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const carData = {
+                tipo: document.getElementById('tipo').value,
+                placa: document.getElementById('placa').value,
+                marca: document.getElementById('marca').value,
+                modelo: document.getElementById('modelo').value,
+                cor: document.getElementById('cor').value,
+                documento: document.getElementById('documento').value,
+                expedicao: document.getElementById('expedicao').value,
+                nome: document.getElementById('nome').value,
+                empresa: document.getElementById('empresa').value,
+                funcao: document.getElementById('funcao').value,
+                casa: document.getElementById('casa').value,
+            };
+
+            // Validation
+            if (carData.placa.length < 7) {
+                alert('Placa deve ter pelo menos 7 caracteres.');
+                return;
+            }
+
+            localStorage.setItem('carData', JSON.stringify(carData));
+            window.location.href = 'visualizar.html';
+        });
+    </script>
+</body>
+
+</html>
